@@ -1,5 +1,23 @@
 function selectionSort(arr) {
-  // type your code here
+  // loop over the array
+  for(let i = 0; i < arr.length; i++){
+    // set a minimum counter to i
+    let min = i
+    // loop over the array again with a second counter set to the follow element of minimum counter
+    for(let j = i + 1; j < arr.length; j++){
+      // if the second counter is less than the first, make it the new minimum counter
+      if(arr[j] < arr[min]){
+        min = j
+      }
+    }
+    // swap the positions of the two counters and keep going through the array
+    if(i !== min){
+      let temp = arr[i]
+      arr[i] = arr[min]
+      arr[min] = temp
+    }
+  }
+  return arr
 }
 
 if (require.main === module) {
